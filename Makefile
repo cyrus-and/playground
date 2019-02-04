@@ -4,7 +4,9 @@ try: REMOVE=--rm
 try: run
 
 run:
-	@SHARED="$$(mktemp -d /tmp/playground.XXXXXX)"; \
+	@\
+	SHARED="$$(mktemp -d /tmp/playground.XXXXXX)"; \
+	DISPLAY="$$([ $$(uname) = Linux ] && echo $$DISPLAY || echo host.docker.internal:0)"; \
 	docker run $(REMOVE) -it \
 		-v "$$SHARED:/home/user/playground" \
 		-e PLAYGROUND_SHARED="$$SHARED" \

@@ -30,3 +30,7 @@ Where `<options>` are command line arguments to pass to `docker run`. Some usefu
 The default `Makefile` rule (`try`) runs a disposable docker container, use `run` to keep the container.
 
 For convenience, a temporary randomly-named folder is mounted to `~user/playground`. The actual folder name is stored in the `PLAYGROUND_SHARED` environment variable.
+
+### Run X applications on macOS
+
+To use X applications on macOS, first  start XQuartz then run `xhost +localhost` to allow X connections from Docker.

@@ -18,7 +18,7 @@ $ make clean
 
 ## Usage
 
-```
+```console
 $ make [run] [OPTIONS=<options>]
 ```
 
@@ -33,4 +33,4 @@ For convenience, a temporary randomly-named folder is mounted to `~user/playgrou
 
 ### Run X applications on macOS
 
-To use X applications on macOS, first  start XQuartz then run `xhost +localhost` to allow X connections from Docker.
+To use X applications on macOS, first start XQuartz then run `xhost +localhost` to allow X connections from Docker.

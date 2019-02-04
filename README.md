@@ -34,3 +34,11 @@ For convenience, a temporary randomly-named folder is mounted to `~user/playgrou
 ### Run X applications on macOS
 
 To use X applications on macOS, first start XQuartz then run `xhost +localhost` to allow X connections from Docker.
+
+It is possible to allow `localhost` by default by placing the above command in an executable `.sh` file in the `~/.xinitrc.d` directory:
+
+```console
+$ mkdir -p ~/.xinitrc.d
+$ echo xhost +localhost >~/.xinitrc.d/allow-localhost.sh
+$ chmod +x ~/.xinitrc.d/allow-localhost.sh
+```

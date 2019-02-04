@@ -9,7 +9,7 @@ run:
 		-v "$$SHARED:/home/user/playground" \
 		-e PLAYGROUND_SHARED="$$SHARED" \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
-		-e DISPLAY=$(DISPLAY) \
+		-e DISPLAY=$$DISPLAY \
 		--shm-size=256m \
 		--hostname playground \
 		$(OPTIONS) \

@@ -12,7 +12,7 @@ run:
 		--interactive \
 		--volume "$$SHARED:/home/user/playground" \
 		--volume /tmp/.X11-unix:/tmp/.X11-unix \
-		--env PLAYGROUND_SHARED="$$SHARED" \
+		--env PLAYGROUND="$$SHARED" \
 		--env DISPLAY=$$DISPLAY \
 		--hostname playground \
 		$(OPTIONS) \

@@ -2,30 +2,16 @@
 
 Disposable Docker sandbox.
 
-## Maintenance
-
-### Build
-
-Rebuild the image from scratch:
+## Quickstart
 
 ```console
 $ make build
-```
-
-### Update
-
-Commit the state of an existing container to the original image and drop the container:
-
-```console
-$ make update CONTAINER=<container>
-```
-
-### Clean
-
-Remove the image:
-
-```console
-$ make clean
+$ make
+user@playground:~$ ls -F
+playground/
+user@playground:~$ # that folder is mounted on the host at:
+user@playground:~$ echo $PLAYGROUND_SHARED
+/tmp/playground.QHyGai
 ```
 
 ## Usage
@@ -54,4 +40,30 @@ It is possible to allow `localhost` by default by placing the above command in a
 $ mkdir -p ~/.xinitrc.d
 $ echo xhost +localhost >~/.xinitrc.d/allow-localhost.sh
 $ chmod +x ~/.xinitrc.d/allow-localhost.sh
+```
+
+## Maintenance
+
+### Build
+
+Rebuild the image from scratch:
+
+```console
+$ make build
+```
+
+### Update
+
+Commit the state of an existing container to the original image and drop the container:
+
+```console
+$ make update CONTAINER=<container>
+```
+
+### Clean
+
+Remove the image:
+
+```console
+$ make clean
 ```

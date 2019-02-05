@@ -1,4 +1,4 @@
-.PHONY: try run build clean
+.PHONY: try run build update clean
 
 try: REMOVE=--rm
 try: run
@@ -20,6 +20,10 @@ run:
 
 build:
 	@docker build --no-cache --tag playground .
+
+update:
+	@docker commit "$(CONTAINER)" playground
+	@docker rm "$(CONTAINER)"
 
 clean:
 	@docker rmi playground

@@ -1,35 +1,32 @@
 FROM debian:stretch
 
-RUN dpkg --add-architecture i386
+# set up repositories
+RUN dpkg --add-architecture i386 # XXX for wine
 RUN apt-get update
-RUN apt-get upgrade --yes
 
+# install services
 RUN apt-get install --yes --no-install-recommends \
-    apache2 \
-    autoconf \
-    bash-completion \
-    bsdmainutils \
-    build-essential \
-    ca-certificates \
-    curl \
-    default-jre \
-    git \
-    less \
-    locales \
-    mysql-server \
-    net-tools \
-    netcat \
-    openssh-client \
-    php \
-    procps \
-    sudo \
-    tmux \
-    unrar-free \
-    unzip \
-    vim \
-    wget \
-    wine \
-    wine32
+    apache2 mysql-server
+
+# install interpreters
+RUN apt-get install --yes --no-install-recommends \
+    default-jre php
+
+# install development tools
+RUN apt-get install --yes --no-install-recommends \
+    autoconf build-essential git
+
+# install wine
+RUN apt-get install --yes --no-install-recommends \
+    wine wine32
+
+# install other utilities
+RUN apt-get install --yes --no-install-recommends \
+    bash-completion bsdmainutils ca-certificates curl less locales net-tools
+    netcat openssh-client procps sudo tmux unrar-free unzip vim wget
+
+# finally upgrade and free some space
+RUN apt-get upgrade --yes
 RUN apt-get clean
 
 # set up locale
@@ -46,4 +43,5 @@ RUN echo 'user ALL=(ALL) NOPASSWD:ALL' >/etc/sudoers.d/user
 USER user
 WORKDIR /home/user
 
+# drop a bash shell
 ENTRYPOINT ["/bin/bash"]

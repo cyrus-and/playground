@@ -22,7 +22,7 @@ RUN apt-get install --yes --no-install-recommends \
 
 # install other utilities
 RUN apt-get install --yes --no-install-recommends \
-    bash-completion bsdmainutils ca-certificates curl less locales net-tools
+    bash-completion bsdmainutils ca-certificates curl less locales net-tools \
     netcat openssh-client procps sudo tmux unrar-free unzip vim wget
 
 # finally upgrade and free some space

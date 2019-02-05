@@ -28,7 +28,7 @@ Where `<options>` are command line arguments passed to `docker run`. Some useful
 
 The default `Makefile` rule (`try`) runs a disposable docker container, use `run` to keep the container.
 
-For convenience, a temporary randomly-named folder is mounted to `~user/playground`. The actual folder name is stored in the `PLAYGROUND_SHARED` environment variable.
+For convenience, a temporary randomly-named host folder is attached to `~user/playground/`. The actual folder name is stored in the `PLAYGROUND_SHARED` environment variable and its content outlives the container so the user should take care of the cleanup if needed.
 
 ### Run X applications on macOS
 

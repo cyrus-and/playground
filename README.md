@@ -4,13 +4,25 @@ Disposable Docker sandbox.
 
 ## Maintenance
 
-One-time build with:
+### Build
+
+Rebuild the image from scratch:
 
 ```console
 $ make build
 ```
 
-Remove the Docker image with:
+### Update
+
+Commit the state of an existing container to the original image and drop the container:
+
+```console
+$ make update CONTAINER=<container>
+```
+
+### Clean
+
+Remove the image:
 
 ```console
 $ make clean
@@ -22,7 +34,7 @@ $ make clean
 $ make [run] [OPTIONS=<options>]
 ```
 
-Where `<options>` are command line arguments to pass to `docker run`. Some useful examples:
+Where `<options>` are command line arguments passed to `docker run`. Some useful examples:
 
 - `'OPTIONS=-p 8080:80'` to forward the container port `8080` to the host port `80`;
 - `'OPTIONS=-v /container/folder:/host/folder'` to mount additional directories;

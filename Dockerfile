@@ -14,7 +14,7 @@ RUN apt-get install --yes --no-install-recommends \
 
 # install development tools
 RUN apt-get install --yes --no-install-recommends \
-    autoconf build-essential git
+    autoconf build-essential git strace
 
 # install wine
 RUN apt-get install --yes --no-install-recommends \

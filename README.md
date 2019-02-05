@@ -1,6 +1,6 @@
-# playground
+# Playground
 
-Disposable Docker sandbox.
+Disposable Docker sandbox for quick isolated testing with X support.
 
 ## Quickstart
 

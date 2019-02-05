@@ -12,7 +12,6 @@ run:
 		-e PLAYGROUND_SHARED="$$SHARED" \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
 		-e DISPLAY=$$DISPLAY \
-		--shm-size=256m \
 		--hostname playground \
 		$(OPTIONS) \
 		playground || true

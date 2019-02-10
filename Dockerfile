@@ -35,7 +35,7 @@ ARG CHARMAP=UTF-8
 RUN localedef -i ${LOCALE} -f ${CHARMAP} ${LOCALE}.${CHARMAP}
 ENV LANG=${LOCALE}.${CHARMAP}
 
-# add regular user
+# add a regular user and grant it sudo privileges
 RUN useradd -ms /bin/bash -G sudo user
 RUN echo 'user ALL=(ALL) NOPASSWD:ALL' >/etc/sudoers.d/user
 

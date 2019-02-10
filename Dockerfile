@@ -43,5 +43,5 @@ RUN echo 'user ALL=(ALL) NOPASSWD:ALL' >/etc/sudoers.d/user
 USER user
 WORKDIR /home/user
 
-# drop a bash shell
-ENTRYPOINT ["/bin/bash"]
+# drop a tmux session
+ENTRYPOINT ["/usr/bin/tmux"]

@@ -10,7 +10,7 @@ RUN apt-get install --yes --no-install-recommends \
 
 # install interpreters
 RUN apt-get install --yes --no-install-recommends \
-    default-jre php
+    default-jre php python python-pip python3 python3-pip
 
 # install development tools
 RUN apt-get install --yes --no-install-recommends \

@@ -16,7 +16,12 @@ run:
 		--env DISPLAY=$$DISPLAY \
 		--hostname playground \
 		$(OPTIONS) \
-		playground || true
+		playground || true; \
+	read -r -p "[+] Keep $$SHARED? (Y/N) [N] " answer; \
+	if [ "$$answer" = 'Y' ]; \
+		then echo '[+] Shared directory untouched'; \
+		else rm -r "$$SHARED" && echo '[+] Shared directory deleted'; \
+	fi \
 
 build:
 	@docker build --no-cache --tag playground .

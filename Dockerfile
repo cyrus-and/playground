@@ -46,5 +46,8 @@ WORKDIR /home/user
 # set up a welcome message
 RUN echo 'echo [+] Shared directory located at $PLAYGROUND in the host' >>.bashrc
 
+# enable 256 colors in tmux
+RUN echo "set-option -g default-terminal 'screen-256color'" >.tmux.conf
+
 # drop a tmux session
 ENTRYPOINT ["/usr/bin/tmux"]

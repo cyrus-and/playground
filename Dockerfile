@@ -32,8 +32,8 @@ RUN apt-get clean
 # set up locale
 ARG LOCALE=en_US
 ARG CHARMAP=UTF-8
-RUN localedef -i ${LOCALE} -f ${CHARMAP} ${LOCALE}.${CHARMAP}
-ENV LANG=${LOCALE}.${CHARMAP}
+RUN localedef -i $LOCALE -f $CHARMAP $LOCALE.$CHARMAP
+ENV LANG=$LOCALE.$CHARMAP
 
 # add a regular user and grant it sudo privileges
 RUN useradd -ms /bin/bash -G sudo user

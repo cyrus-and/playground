@@ -7,9 +7,9 @@ Disposable Docker sandbox for quick isolated testing with X support.
 ```console
 $ make build
 $ make
+[+] Shared directory located at /tmp/playground.QHyGai on the host
 user@playground:~$ ls -F
 playground/
-user@playground:~$ # that folder is mounted on the host at:
 user@playground:~$ echo $PLAYGROUND
 /tmp/playground.QHyGai
 ```
@@ -29,7 +29,7 @@ Where `<options>` are command line arguments passed to `docker run`. Some useful
 
 The default `Makefile` rule (`try`) runs a disposable docker container, use `run` to keep the container.
 
-For convenience, a temporary randomly-named host folder is attached to `~user/playground/`. The actual folder name is stored in the `PLAYGROUND` environment variable and its content outlives the container so the user should take care of the cleanup if needed.
+For convenience, a temporary randomly-named host folder is attached to `~user/playground/`. The actual folder name is stored in the `PLAYGROUND` environment variable and its content may outlive the container.
 
 ### Run X applications on macOS
 

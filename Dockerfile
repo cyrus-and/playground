@@ -43,5 +43,8 @@ RUN echo 'user ALL=(ALL) NOPASSWD:ALL' >/etc/sudoers.d/user
 USER user
 WORKDIR /home/user
 
+# set up a welcome message
+RUN echo 'echo [+] Shared directory located at $PLAYGROUND in the host' >>.bashrc
+
 # drop a tmux session
 ENTRYPOINT ["/usr/bin/tmux"]

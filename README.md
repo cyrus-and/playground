@@ -24,7 +24,8 @@ Where `<options>` are command line arguments passed to `docker run`. Some useful
 
 - `'OPTIONS=-p 8080:80'` to forward the container port `8080` to the host port `80`;
 - `'OPTIONS=-v /container/folder:/host/folder'` to mount additional directories;
-- `'OPTIONS=--privileged'` to run the container in privileged mode, e.g., to run `strace`.
+- `'OPTIONS=--privileged'` to run the container in privileged mode, e.g., to run `strace`;
+- `'OPTIONS=--network none` to disable the network access in the container.
 
 The default `Makefile` rule (`try`) runs a disposable docker container, use `run` to keep the container.
 

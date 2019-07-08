@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster
 
 # set up repositories
 RUN dpkg --add-architecture i386 # XXX for wine
@@ -6,7 +6,7 @@ RUN apt-get update
 
 # install services
 RUN apt-get install --yes --no-install-recommends \
-    apache2 mysql-server
+    apache2 default-mysql-server
 
 # install interpreters
 RUN apt-get install --yes --no-install-recommends \

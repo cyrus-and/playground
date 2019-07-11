@@ -16,6 +16,8 @@ user@playground:~$ echo $PLAYGROUND
 
 ## Usage
 
+Build needs to be performed only once. Then:
+
 ```console
 $ make [run] [OPTIONS=<options>]
 ```
@@ -29,7 +31,13 @@ Where `<options>` are command line arguments passed to `docker run`. Some useful
 
 The default `Makefile` rule (`try`) runs a disposable docker container, use `run` to keep the container.
 
-For convenience, a temporary randomly-named host folder is attached to `~user/playground/`. The actual folder name is stored in the `PLAYGROUND` environment variable and its content may outlive the container.
+A temporary randomly-named host folder is mounted to `~user/playground/` in the container. The actual folder name is stored in the `PLAYGROUND` environment variable and its content may outlive the container. When the container is terminated the user is prompted to keep or delete the temporary folder. Use the above `-v` option for persistent shared folders wen the `run` command is used.
+
+A convenient shell alias is:
+
+```sh
+alias playground='make -sC /path/to/playground/'
+```
 
 ### Run X applications on macOS
 
